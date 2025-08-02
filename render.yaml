@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: snipe-it
+    env: docker
+    repo: https://github.com/bonfacerobins/snipe-it
+    branch: master
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: APP_KEY
+        value: base64:DM4MKtOTE++4Qbno1i8S9DgTK3GwWC4Ab7ncDSeyK+0=
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://cbassets.onrender.com/
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /var/www/html/storage/database.sqlite
+      - key: MAIL_PORT
+        value: 1025
+      - key: MAIL_HOST
+        value: mailhog
+      - key: MAIL_USERNAME
+        value: null
+      - key: MAIL_PASSWORD
+        value: null
+      - key: MAIL_ENCRYPTION
+        value: null
+      - key: MAIL_FROM_ADDRESS
+        value: admin@example.com
+      - key: MAIL_FROM_NAME
+        value: SnipeIT Admin
